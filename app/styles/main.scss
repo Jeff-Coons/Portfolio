@@ -31,6 +31,9 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
 
 // ================= Header ================= //
 
@@ -39,7 +42,7 @@ header {
 
   .header-contact {
     @include span-columns(12);
-    margin-bottom: rem(30);
+    margin-bottom: 3%;
   }
 
   .header-contact-info {
@@ -66,7 +69,7 @@ header {
     .header-logo {
       @include span-columns(3);
       @include shift(4.5);
-      margin-bottom: rem(80);
+      margin-bottom: 7%;
     }
 
     .header-name {
@@ -189,6 +192,20 @@ header {
   background-size: cover;
 }
 
+.github-screenshot {
+  background-image: url("../images/github-profile.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.market-screenshot {
+  background-image: url("../images/market.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .project-info {
   @include span-columns(8);
   @include shift(2);
@@ -233,6 +250,60 @@ header {
       &:hover {
         color: $accent-color;
       }
+    }
+  }
+}
+
+
+// ================= Footer ================= //
+
+
+footer {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  @include outer-container;
+
+  .footer-logo {
+    @include span-columns(1);
+    @include shift(5.5);
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  .footer-links {
+    @include span-columns(8);
+    @include shift(2);
+    padding: 0 5%;
+
+    ul {
+      padding-left: 0;
+      font-family: $primary-font;
+      font-size: rem(14);
+      font-weight: 300;
+      color: $secondary-color;
+    }
+
+    li {
+      float: left;
+      margin: rem(5) rem(10) rem(20);
+    }
+
+    .seperator {
+      color: $primary-color;
+    }
+
+    a {
+      font-family: $primary-font;
+      font-size: rem(14);
+      font-weight: 300;
+      color: $secondary-color;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $accent-color;
     }
   }
 }
