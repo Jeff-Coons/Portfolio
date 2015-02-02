@@ -1,0 +1,238 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+// ================= Variables ================= //
+
+
+$primary-font: "Nimbus Sans", "Helvetica", "Arial", "sans-serif";
+$primary-color: #444B4F; //-- Dark Blue --//
+$secondary-color: #8B8B83; //-- Dark Brown --//
+$accent-color: #B1B2A8; //-- Light Brown --//
+$body-font-size: rem(18);
+$main-heading-font-size: rem(36);
+$sub-heading-font-size: rem(16);
+
+
+
+// ================= General ================= //
+
+
+body {
+  font-family: $primary-font;
+  color: $secondary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+
+// ================= Header ================= //
+
+header {
+  @include outer-container;
+
+  .header-contact {
+    @include span-columns(12);
+    margin-bottom: rem(30);
+  }
+
+  .header-contact-info {
+    float: right;
+
+    li {
+      float: left;
+      display: inline-block;
+      margin-right: rem(20);
+
+      &:last-child {
+        margin-right: rem(0);
+      }
+    }
+
+    svg {
+      width: 40px;
+    }
+  }
+
+  .content-wrapper {
+    @include outer-container;
+
+    .header-logo {
+      @include span-columns(3);
+      @include shift(4.5);
+      margin-bottom: rem(80);
+    }
+
+    .header-name {
+      @include span-columns(12);
+
+      h1 {
+        font-family: $primary-font;
+        text-transform: uppercase;
+        letter-spacing: rem(2);
+        color: $primary-color;
+        font-weight: 700;
+        font-size: rem(28);
+        text-align: center;
+        margin-bottom: rem(10);
+      }
+
+      h3 {
+        font-family: $primary-font;
+        text-transform: uppercase;
+        letter-spacing: rem(2);
+        color: $secondary-color;
+        font-weight: 300;
+        font-size: rem(22);
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+// ================= About ================= //
+
+.about {
+  margin-top: 5%;
+  @include outer-container;
+
+  p {
+    @include span-columns(10);
+    @include shift(1);
+
+    font-family: $primary-font;
+    font-size: rem(18);
+    font-weight: 300;
+    color: $secondary-color;
+    text-align: center;
+    line-height: 150%;
+  }
+
+  .work-links {
+    @include span-columns(12);
+    margin-top: 2%;
+  }
+
+  .dev-icon {
+    @include span-columns(1);
+    @include shift(5.5);
+
+    svg {
+      padding: rem(20);
+      cursor: pointer
+    }
+  }
+}
+
+
+// ================= Work ================= //
+
+
+.work {
+  background: #fafafa;
+}
+
+.wrapper {
+  @include outer-container;
+
+  ul {
+    @include span-columns(7.5);
+    @include shift(2.5);
+    padding-left: 0;
+  }
+
+  li {
+    float: left;
+    font-family: $primary-font;
+    font-size: rem(18);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $secondary-color;
+    margin: rem(25);
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .active {
+    color: $primary-color;
+  }
+}
+
+.imac {
+  @include span-columns(8);
+  @include shift(2);
+  position: relative;
+
+  #screenshots {
+    height: 60%;
+    width: 95%;
+    background-color: #fff;
+    position: absolute;
+    top: rem(25);
+    left: rem(17);
+  }
+}
+
+.surf-screenshot {
+  background-image: url("../images/surf.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project-info {
+  @include span-columns(8);
+  @include shift(2);
+  margin-top: 2%;
+
+  font-family: $primary-font;
+  font-size: rem(16);
+  font-weight: 300;
+  color: $primary-color;
+  line-height: 150%;
+  text-align: center;
+
+  a {
+    font-family: $primary-font;
+    font-size: rem(16);
+    font-weight: 300;
+    color: $secondary-color;
+    line-height: 150%;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $accent-color;
+  }
+
+  .links {
+    @include span-columns(4);
+    @include shift(4);
+    padding-left: 0;
+
+    li {
+      float: left;
+      font-family: $primary-font;
+      font-size: rem(16);
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $secondary-color;
+      margin: rem(10) rem(15);
+      cursor: pointer;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}
