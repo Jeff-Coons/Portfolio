@@ -1,3 +1,3 @@
-## Yo, I'm a Readme
+## Portfolio
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+This is a place where you can see some of my best work that I've created at the moment. Check it out here: http://jeff-coons.github.io/Portfolio. More to come soon!
