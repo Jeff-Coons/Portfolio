@@ -5,14 +5,20 @@
 // ================= Variables ================= //
 
 
+// Font Family and sizes
 $primary-font: "Nimbus Sans", "Helvetica", "Arial", "sans-serif";
-$primary-color: #444B4F; //-- Dark Blue --//
-$secondary-color: #8B8B83; //-- Dark Brown --//
-$accent-color: #B1B2A8; //-- Light Brown --//
 $body-font-size: rem(18);
 $main-heading-font-size: rem(36);
 $sub-heading-font-size: rem(16);
 
+// Colors
+$primary-color: #444B4F; //-- Dark Blue --//
+$secondary-color: #8B8B83; //-- Dark Brown --//
+$accent-color: #B1B2A8; //-- Light Brown --//
+
+// Media Queries
+$mobile: new-breakpoint(max-width 480px);
+$tablet: new-breakpoint(min-width 481px max-width 965px);
 
 
 // ================= General ================= //
@@ -35,7 +41,9 @@ h1, h2, h3, h4 {
   display: none;
 }
 
+
 // ================= Header ================= //
+
 
 header {
   @include outer-container;
@@ -43,6 +51,11 @@ header {
   .header-contact {
     @include span-columns(12);
     margin-bottom: 3%;
+
+    @include media($mobile) {
+      @include span-columns(11);
+      margin-bottom: 0;
+    }
   }
 
   .header-contact-info {
@@ -70,6 +83,16 @@ header {
       @include span-columns(3);
       @include shift(4.5);
       margin-bottom: 7%;
+
+      @include media($mobile) {
+        @include span-columns(4.5);
+        @include shift(3.25);
+        margin-bottom: 3%;
+
+        svg {
+          width: rem(152);
+        }
+      }
     }
 
     .header-name {
@@ -95,12 +118,25 @@ header {
         font-size: rem(22);
         text-align: center;
       }
+
+      @include media($mobile) {
+        @include span-columns(12);
+
+        h1 {
+          font-size: rem(24);
+        }
+
+        h3 {
+          font-size: rem(18);
+        }
+      }
     }
   }
 }
 
 
 // ================= About ================= //
+
 
 .about {
   margin-top: 5%;
@@ -116,6 +152,15 @@ header {
     color: $secondary-color;
     text-align: center;
     line-height: 150%;
+
+    @include media($mobile) {
+      @include span-columns(10);
+      @include shift(1);
+
+      p {
+        font-size: rem(14);
+      }
+    }
   }
 
   .work-links {
@@ -131,6 +176,11 @@ header {
       padding: rem(20);
       cursor: pointer
     }
+
+    @include media($mobile) {
+      @include span-columns(3);
+      @include shift(4.5);
+    }
   }
 }
 
@@ -140,6 +190,10 @@ header {
 
 .work {
   background: #fafafa;
+
+  @include media($mobile) {
+    background: #fafafa;
+  }
 }
 
 .wrapper {
@@ -168,12 +222,39 @@ header {
   .active {
     color: $primary-color;
   }
+
+  @include media($mobile) {
+    @include span-columns(12);
+
+    ul {
+      @include span-columns(10);
+      @include shift(1);
+      padding-left: 0;
+    }
+
+    li {
+      float: none;
+      font-size: rem(14);
+      margin: 0 0 rem(10) 25%;
+    }
+  }
 }
 
 .imac {
   @include span-columns(8);
   @include shift(2);
   position: relative;
+
+  @include media($mobile) {
+    @include span-columns(11);
+    @include shift(.35);
+    position: relative;
+
+    svg {
+      width: rem(300);
+      height: rem(207);
+    }
+  }
 
   #screenshots {
     height: 60%;
@@ -182,6 +263,14 @@ header {
     position: absolute;
     top: rem(25);
     left: rem(17);
+
+    @include media($mobile) {
+      height: 60%;
+      width: 95%;
+      position: absolute;
+      top: rem(12);
+      left: rem(11);
+    }
   }
 }
 
@@ -232,6 +321,13 @@ header {
     color: $accent-color;
   }
 
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+
+    font-size: rem(14);
+  }
+
   .links {
     @include span-columns(4);
     @include shift(4);
@@ -249,6 +345,19 @@ header {
 
       &:hover {
         color: $accent-color;
+      }
+    }
+
+    @include media($mobile) {
+      @include span-columns(9);
+      @include shift(2);
+
+      li {
+        margin: rem(10) rem(10);
+      }
+
+      a {
+        font-size: rem(14);
       }
     }
   }
@@ -269,6 +378,11 @@ footer {
 
     svg {
       width: 100%;
+    }
+
+    @include media($mobile) {
+      @include span-columns(2);
+      @include shift(5);
     }
   }
 
@@ -304,6 +418,24 @@ footer {
 
     a:hover {
       color: $accent-color;
+    }
+
+    @include media($mobile) {
+      @include span-columns(11);
+      @include shift(.5);
+      padding: 0;
+
+      li {
+        margin: 0 rem(5) rem(15);
+
+        &:last-child {
+          margin-left: 40%;
+        }
+      }
+
+      a {
+        font-size: rem(11);
+      }
     }
   }
 }
